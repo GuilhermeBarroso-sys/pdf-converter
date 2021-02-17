@@ -1,17 +1,11 @@
-const fs = require("fs");
-fs.writeFile("./dolph.txt", "O.o o.O",(error) => {
-    if(error) {
-        console.log(`error! ${error}`);
-    }
-});
+const Reader = require("./Reader");
 
-fs.readFile("./dolph.txt",{encoding: 'utf-8'},(error, data ) => {
-    if(error) {
-        console.log(`Ocorreu um erro! ${error}`);
-    }
-    else {
-        console.log(data);
-    }
+var reader = new Reader();
 
-});
 
+async function main() {
+    var data = await reader.read("./users.csv");
+    console.log(data);
+}
+
+main();
