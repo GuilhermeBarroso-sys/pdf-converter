@@ -1,5 +1,6 @@
 const fs = require("fs");
 const util = require("util");
+
 class Reader {
 
     constructor() {
@@ -7,7 +8,7 @@ class Reader {
     }
     async read(filePath) {
         try {
-            return await this.reader(filePath, "utf8");
+            return await this.reader(filePath, "utf-8");
         }
 
         catch(err) {
