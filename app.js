@@ -3,6 +3,7 @@ const Processor = require("./Processor");
 const Table = require("./Table");
 const HtmlParser = require("./HtmlParser");
 const Writer = require("./Writer");
+const PDFWriter = require("./PDFWriter");
 var reader = new Reader();
 var writer = new Writer();
 async function main() {
@@ -13,6 +14,7 @@ async function main() {
     var html = await HtmlParser.Parse(users);
     console.log(html);
     writer.Write(Date.now() + ".html",html);
+    PDFWriter.WritePDF(Date.now() + ".PDF", html);
 }
 
 main();
